@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function myFunction(){
+
+var selectstate=["Arizona","California","Wisconsin"];
+var arrAZ=["Goodyear","Buckeye","Verrado","Phoenix","Glendale"];
+var arrCA=["Los Angelas","San Diego","San Jose","Fresno","Anaheim"];
+var arrWI=["Green Bay","Appleton","Madison"];
+
+var selectoptions= (document.getElementById("state").value);
+var displayCountries=document.getElementById("cities");
+
+document.getElementById("cities").innerHTML="";
+
+if (selectoptions=="AZ"){
+    for(i=0;i<arrAZ.length;i++){
+        var soptions=document.createElement('option');
+        console.log(soptions);
+        soptions.innerHTML=arrAZ[i];
+        console.log(soptions.innerHTML);
+        soptions.value=arrAZ[i];
+        displayCountries.appendChild(soptions);
+    }
+}
+
+
+if (selectoptions=="CA"){
+    for(i=0;i<arrCA.length;i++){
+        var soptions=document.createElement('option');
+        console.log(soptions);
+        soptions.innerHTML=arrCA[i];
+        console.log(soptions.innerHTML);
+        soptions.value=arrCA[i];
+        displayCountries.appendChild(soptions);
+    }
+}
+
+if (selectoptions=="WI"){
+    for(i=0;i<arrWI.length;i++){
+        var soptions=document.createElement('option');
+        console.log(soptions);
+        soptions.innerHTML=arrWI[i];
+        console.log(soptions.innerHTML);
+        soptions.value=arrWI[i];
+        displayCountries.appendChild(soptions);
+    }
+}
+}
+
+</script>
+
+<div class="states">
+    <select id="state" onchange="myFunction()">
+        <option>Select state</option>
+        <option value="AZ">Arizona</option>
+        <option value="CA">California</option>
+        <option value="WI">Wisconsin</option>
+    </select>
+
+    <select id="cities">
+        <option>Cities</option>
+    </select>
+</div>
+
+
+</body>
+</html>
